@@ -2,3 +2,4 @@ flask
 google
 google-genai
 google-generativeai
+gunicorn
