@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Set your Gemini API key here or via environment variable
 
 
-client = genai.Client(api_key="AIzaSyD7oj-xxy7ygVf8pkdCBLld2j1TppQaqAY")
+client = genai.Client(api_key="Genaiapi")
 
 @app.route("/generate", methods=["POST"])
 def generate():
