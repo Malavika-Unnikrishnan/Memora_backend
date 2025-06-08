@@ -5,9 +5,9 @@ import os
 app = Flask(__name__)
 
 # Set your Gemini API key here or via environment variable
-genai.configure(api_key="GEMINI_API_KEY")
 
-client = genai.GenerativeModel("gemini-2.0-flash")
+
+client = genai.Client(api_key="GEMINI_API_KEY")
 
 @app.route("/generate", methods=["POST"])
 def generate():
@@ -39,7 +39,9 @@ Gemini:\"\"\"
 Now continue the conversation.
 """
 
-    response = client.generate_content(prompt)
+    response = client.models.generate_content(
+    model="gemini-2.0-flash", contents=prompt
+)
     return jsonify({"response": response.text})
 
 
